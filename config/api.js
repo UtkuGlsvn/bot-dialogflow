@@ -1,9 +1,18 @@
+/**
+ * @Author: utkuglsvn <glsvn>
+ * @Date:   2019-05-21T12:39:09+03:00
+ * @Last modified by:   glsvn
+ * @Last modified time: 2019-05-21T12:39:19+03:00
+ */
+
+
+
 var apiai = require('apiai');
 
 // read the api.ai docs : https://api.ai/docs/
 
 //Enter your API Key
-var app = apiai('2007fee6c3d14ef889535eb0fc8b181b');
+var app = apiai('a055636b984d4117b64ed99a37e4c525');
 
 // Function which returns speech from api.ai
 var getRes = function(query) {

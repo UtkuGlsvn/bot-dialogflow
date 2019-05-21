@@ -1,15 +1,24 @@
+/**
+ * @Author: utkuglsvn <glsvn>
+ * @Date:   2019-05-21T12:40:07+03:00
+ * @Last modified by:   glsvn
+ * @Last modified time: 2019-05-21T12:41:26+03:00
+ */
+
+
+
 var botui = new BotUI('api-bot');
 
 var socket = io.connect('http://localhost:8010');
 // read the BotUI docs : https://docs.botui.org/
 
 botui.message.add({
-  content: 'Lets Start Talking...',
-  delay: 1500,
+  content: 'Selam,konuşmak için bir şeyler yazınız:)',
+  delay: 1000,
 }).then(function () {
   botui.action.text({
     action: {
-      placeholder: 'Say Hello', }
+      placeholder: 'Selam yazarak başlayabiliriz:)', }
   }
 ).then(function (res) {
   socket.emit('fromClient', { client : res.value }); // sends the message typed to server
@@ -33,7 +42,7 @@ function newMessage (response) {
 function addAction () {
   botui.action.text({
     action: {
-      placeholder: 'enter response...', 
+      placeholder: 'konuşmaya devam edebiliriz:)',
     }
   }).then(function (res) {
     socket.emit('fromClient', { client : res.value });
